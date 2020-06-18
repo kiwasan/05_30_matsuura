@@ -2,7 +2,7 @@
 // 出力用の文字列（ここに読み込んだデータをタグに入れた形式で追加していく）
 $str = "";
 // ファイルを開く処理
-$file = fopen("data/todo.txt", "r");
+$file = fopen("data/kadai.csv", "r");
 flock($file, LOCK_EX);
 if ($file) {
   while ($line = fgets($file)) {
@@ -11,15 +11,6 @@ if ($file) {
 }
 flock($file, LOCK_UN);
 fclose($file);
-
-// ファイル書き込み処理
-// 1行づつ取り出す
-
-
-
-// ファイルアンロックの処理
-
-// ファイル閉じる
 ?>
 
 <!DOCTYPE html>
@@ -38,13 +29,17 @@ fclose($file);
     <table>
       <thead>
         <tr>
-          <th>todo</th>
+          <th>申込</th>
         </tr>
       </thead>
-      <tbody>
-        <h1><?= $str ?></h1>
-
-      </tbody>
+      <thread>
+        <tr>
+          <th>認定書</th>
+        </tr>
+        </thead>
+        <tbody>
+          <h1><?= $str ?></h1>
+        </tbody>
     </table>
   </fieldset>
 </body>

@@ -3,14 +3,15 @@
 //exit();
 
 // データの受取
-$todo = $_POST["todo"];
+$mousikomi = $_POST["mousikomi"];
+$nintei = $_POST["nintei"];
 $deadline = $_POST["deadline"];
 
 // 書き込みデータの作成（スペース区切りで最後に改行コードを追加）
-$write_data = "{$todo} {$deadline}\n";
+$write_data = "{$mousikomi} {$deadline}\n";
 
 // ファイルを開く処理
-$file = fopen("data/todo.txt", "a");
+$file = fopen("data/kadai.csv", "a");
 // var_dump($file);
 // exit();
 // ファイルロックの処理
